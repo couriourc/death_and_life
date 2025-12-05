@@ -1,0 +1,27 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="死生"
+run/main_scene="uid://dr1w0xc6lw1ss"
+config/features=PackedStringArray("4.5", "Forward Plus")
+boot_splash/show_image=false
+boot_splash/fullsize=false
+config/icon="res://icon.svg"
+
+[autoload]
+
+AutoLoad="*res://scenes/AutoLoad.tscn"
+
+[global_group]
+
+auto_load="全局自动加载的分组"
+bgm="bgm 分组"
