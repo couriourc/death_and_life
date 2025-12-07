@@ -1,0 +1,75 @@
+[gd_scene load_steps=10 format=3 uid="uid://djfadn0u0ongl"]
+
+[ext_resource type="Script" uid="uid://extrqwfcoxif" path="res://scripts/level_1.gd" id="1_5xbjy"]
+[ext_resource type="Shader" uid="uid://cm6jme6odhjlh" path="res://shaders/grad.gdshader" id="1_hn12h"]
+[ext_resource type="AudioStream" uid="uid://c3hxxlodjaa2m" path="res://audio/continuous-typing-computer-keyboard.mp3" id="2_4nkto"]
+[ext_resource type="Shader" uid="uid://bnd4b6qc1on8w" path="res://shaders/cursor.gdshader" id="2_ihfcg"]
+[ext_resource type="Texture2D" uid="uid://dwbl6k88ilsv" path="res://images/cursor/ink/text_page_01.png" id="3_rka8t"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7mycd"]
+shader = ExtResource("1_hn12h")
+shader_parameter/radius = 1.2330000585675
+
+[sub_resource type="LabelSettings" id="LabelSettings_0xm2m"]
+font_size = 38
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_h2yge"]
+shader = ExtResource("2_ihfcg")
+shader_parameter/opacity = 1.625
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_lquwl"]
+shader = ExtResource("1_hn12h")
+shader_parameter/radius = 1.91200009082
+
+[node name="LevelMain" type="CanvasLayer"]
+script = ExtResource("1_5xbjy")
+target_char_list = Array[int]([3])
+type_sound = ExtResource("2_4nkto")
+
+[node name="bg" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_7mycd")
+clip_contents = true
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(576, 324)
+size_flags_horizontal = 6
+size_flags_vertical = 6
+metadata/_edit_use_anchors_ = true
+
+[node name="center_level" type="HBoxContainer" parent="bg"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -132.5
+offset_top = -26.5
+offset_right = 136.5
+offset_bottom = 30.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="title" type="Label" parent="bg/center_level"]
+layout_mode = 2
+label_settings = SubResource("LabelSettings_0xm2m")
+
+[node name="cursor" type="TextureRect" parent="bg/center_level"]
+modulate = Color(0.91228896, 0.9122889, 0.91228884, 1)
+z_index = 1
+material = SubResource("ShaderMaterial_h2yge")
+layout_mode = 2
+texture = ExtResource("3_rka8t")
+
+[node name="fade_in" type="CanvasModulate" parent="."]
+material = SubResource("ShaderMaterial_lquwl")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+
+[connection signal="gui_input" from="bg" to="." method="_on_bg_gui_input"]

@@ -13,13 +13,24 @@ config_version=5
 config/name="死生"
 run/main_scene="uid://dr1w0xc6lw1ss"
 config/features=PackedStringArray("4.5", "Forward Plus")
+boot_splash/bg_color=Color(0, 0, 0, 1)
 boot_splash/show_image=false
 boot_splash/fullsize=false
-config/icon="res://icon.svg"
+config/icon="uid://cct3bhwkgmmes"
 
 [autoload]
 
 AutoLoad="*res://scenes/AutoLoad.tscn"
+SceneManager="*res://addons/scene_manager/scene_manager.gd"
+
+[display]
+
+window/size/resizable=false
+window/size/borderless=true
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/effects/plugin.cfg", "res://addons/scene_manager/plugin.cfg")
 
 [global_group]
 

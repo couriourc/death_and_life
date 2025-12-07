@@ -1,8 +1,11 @@
 extends Node
 
-@onready var bgm_player:AudioStreamPlayer2D = $AudioStreamPlayer2D
-# Called when the node enters the scene tree for the first time.
+@onready var bgm_player:AudioStreamPlayer2D =  $bgm
+var leve2 = preload("res://scenes/level_2.tscn")
 func _ready() -> void:
-	pass # Replace with function body.
 	bgm_player.play()
-	
+
+func to_level2():
+	$".".add_child(leve2.instantiate())
+	$LevelTransition.queue_free()
+	remove_child($LevelTransition)
