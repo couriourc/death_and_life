@@ -5,12 +5,5 @@ extends Node
 
 func _on_animation_finished(_anim_name):
 	splash_screen.grab_focus()  # 主动获取键盘焦点
-
-
-
-func _on_main_title_gui_input(event: InputEvent) -> void:
-	if event.is_action("ui_accept"):
-		SceneManager.change_scene(main_tscn)
-	if event is InputEvent:
-		if event.is_match(event,MOUSE_BUTTON_LEFT) and event.is_pressed():
-			SceneManager.change_scene(main_tscn)
+	await get_tree().create_timer(1.0).timeout
+	SceneRoot.change_scene(main_tscn)

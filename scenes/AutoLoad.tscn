@@ -1,6 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://jrvswv6ximv8"]
+[gd_scene load_steps=3 format=3 uid="uid://jrvswv6ximv8"]
 
 [ext_resource type="Script" uid="uid://dqmpcnxhpyav5" path="res://scripts/auto_load.gd" id="1_u3op8"]
+[ext_resource type="AudioStream" uid="uid://kqp0bje1nm7w" path="res://audio/bgm.mp3" id="2_u3op8"]
 
 [node name="AutoLoad" type="Node" groups=["auto_load"]]
 script = ExtResource("1_u3op8")
+
+[node name="bgm" type="AudioStreamPlayer2D" parent="." groups=["bgm"]]
+stream = ExtResource("2_u3op8")

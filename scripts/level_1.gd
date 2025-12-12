@@ -47,7 +47,10 @@ func start_typewrite():
 	tween = create_tween()
 	tween.set_ease(ease_type)
 	tween.set_trans(Tween.TRANS_CUBIC)
-	tween.tween_property(self,"progress",1.0,total_duration)
-	tween.connect("finished",$"..".to_level2)
-	
-	
+	tween.tween_interval(2.5)
+	tween.chain().tween_property(self,"progress",1.0,total_duration)
+	tween.connect("finished",
+	func ():
+		AutoLoad.play_bgm()
+		SceneRoot.change_scene("res://scenes/level_2.tscn")
+	)

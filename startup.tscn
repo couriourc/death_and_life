@@ -92,5 +92,4 @@ libraries = {
 autoplay = "splash"
 playback_auto_capture_transition_type = 1
 
-[connection signal="gui_input" from="." to="." method="_on_main_title_gui_input"]
 [connection signal="animation_finished" from="fade_in" to="." method="_on_animation_finished"]

@@ -21,12 +21,12 @@ config/icon="uid://cct3bhwkgmmes"
 [autoload]
 
 AutoLoad="*res://scenes/AutoLoad.tscn"
-SceneManager="*res://addons/scene_manager/scene_manager.gd"
+SceneRoot="*res://addons/scene_manager/scene_manager.tscn"
 
 [display]
 
-window/size/resizable=false
 window/size/borderless=true
+window/stretch/mode="viewport"
 
 [editor_plugins]
 
@@ -36,3 +36,9 @@ enabled=PackedStringArray("res://addons/effects/plugin.cfg", "res://addons/scene
 
 auto_load="全局自动加载的分组"
 bgm="bgm 分组"
+
+[rendering]
+
+anti_aliasing/quality/msaa_2d=1
+environment/defaults/default_clear_color=Color(0.047557652, 0.047557652, 0.04755763, 1)
+anti_aliasing/quality/screen_space_aa=1

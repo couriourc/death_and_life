@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://6ero38nq7y37"]
+
+[ext_resource type="Script" uid="uid://bbc3jj7id4wrm" path="res://addons/scene_manager/scene_manager.gd" id="1_1etm4"]
+
+[node name="SceneRoot" type="Node"]
+script = ExtResource("1_1etm4")
+
+[node name="pre_stage" type="CanvasLayer" parent="."]
+
+[node name="stage" type="CanvasLayer" parent="."]
